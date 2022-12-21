@@ -1,0 +1,16 @@
+version: '3'
+services:
+  mediinfo-component-agileconfig:
+    image: '172.19.30.186:8000/pub/agile_config:1.6.8.1'
+    restart: always
+    container_name: mediinfo-component-agileconfig
+    network_mode: bridge
+    ports:
+      - 5000:5000
+    environment:
+      - 'TZ=Asia/Shanghai'
+      - 'adminConsole=true'
+      - 'cluster=false'
+      - 'db__provider=mysql'
+      - 'db__conn=Data Source=172.28.47.3;Database=lyra-config;User ID=root;Password=admin;pooling=true;port=3306;sslmode=none;CharSet=utf8;'
+      - 'pathBase=/mediinfo-component-agileconfig'
